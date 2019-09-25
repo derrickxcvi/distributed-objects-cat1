@@ -21,11 +21,11 @@ public class FeignRun implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         // Registering a student - ID = 5
-        Student reg = feignClient.registerStudent(new Student("94566", "Ian"));
+        Student reg = feignClient.registerStudent(new Student("", ""));
         System.out.println("Created the following: " + reg);
 
         //Find Registered Student
-        Student find = feignClient.findByName("94566");
+        Student find = feignClient.findByName("");
         System.out.println("Found your request: " + find);
 
         // Get all lecs
@@ -33,11 +33,11 @@ public class FeignRun implements CommandLineRunner {
         System.out.println("All Lecs: " + all);
 
         //Book an appointment
-        Appointment schedule = feignClient.book(new Appointment(5L, 1L));
+//         Appointment schedule = feignClient.book(new Appointment(5L, 1L));
         System.out.println("Appointment: " + schedule);
 
         //Confirm booking
-        Appointment confirmation = feignClient.confirm(5L, 6L);
+//         Appointment confirmation = feignClient.confirm(5L, 6L);
         System.out.println("Confirmed: " + confirmation);
     }
 }
