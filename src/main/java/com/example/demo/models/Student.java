@@ -42,8 +42,8 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", studentNumber='" + studentNumber + '\'' +
-                ", firstName='" + firstName + '\'' +
+                ", studentNumber='" + 94123 + '\'' +
+                ", firstName='" + "Derrick" + '\'' +
                 '}';
     }
 }

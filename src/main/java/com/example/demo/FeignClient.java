@@ -1,15 +1,11 @@
 package com.example.demo;
 
-import com.example.demo.models.Appointment;
-import com.example.demo.models.Lecturer;
 import com.example.demo.models.Student;
-import feign.Body;
-import org.hibernate.annotations.common.reflection.XMethod;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@org.springframework.cloud.openfeign.FeignClient(name = "client", url = "http://127.0.0.1:1000")
+@org.springframework.cloud.openfeign.FeignClient(name = "client", url = "http://10.51.10.111:2000")
 public interface FeignClient {
 
     //Register Student
@@ -21,14 +17,14 @@ public interface FeignClient {
     Student findByName(@RequestParam(name = "studentNumber") String studentNumber);
 
     //Get lecturers
-    @RequestMapping(method = RequestMethod.GET, value = "lecturers")
-    List<Lecturer> getAll();
+   // @RequestMapping(method = RequestMethod.GET, value = "lecturers")
+   // List<Lecturer> getAll();
 
     //Create Appointment
-    @RequestMapping(method = RequestMethod.POST, value = "appointments")
-    Appointment book(@RequestBody Appointment appointment);
+    //@RequestMapping(method = RequestMethod.POST, value = "appointments")
+    //Appointment book(@RequestBody Appointment appointment);
 
     //Confirm Booking
-    @RequestMapping(method = RequestMethod.PATCH, value = "appointments/{appointmentId}")
-    Appointment confirm(@RequestParam(name = "studentId") Long studentId, @PathVariable(name = "appointmentId") Long appointmentId);
+    //@RequestMapping(method = RequestMethod.PATCH, value = "appointments/{appointmentId}")
+    //Appointment confirm(@RequestParam(name = "studentId") Long studentId, @PathVariable(name = "appointmentId") Long appointmentId);
 }

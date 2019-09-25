@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.models.Appointment;
-import com.example.demo.models.Lecturer;
 import com.example.demo.models.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -28,16 +26,18 @@ public class FeignRun implements CommandLineRunner {
         Student find = feignClient.findByName("");
         System.out.println("Found your request: " + find);
 
+
+
         // Get all lecs
-        List<Lecturer> all = feignClient.getAll();
-        System.out.println("All Lecs: " + all);
+       // List<Lecturer> all = feignClient.getAll();
+        //System.out.println("All Lecs: " + all);
 
         //Book an appointment
 //         Appointment schedule = feignClient.book(new Appointment(5L, 1L));
-        System.out.println("Appointment: " + schedule);
+        //System.out.println("Appointment: " + schedule);
 
         //Confirm booking
 //         Appointment confirmation = feignClient.confirm(5L, 6L);
-        System.out.println("Confirmed: " + confirmation);
+        //System.out.println("Confirmed: " + confirmation);
     }
 }
